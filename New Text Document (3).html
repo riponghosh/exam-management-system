@@ -1,0 +1,131 @@
+<html>
+
+
+<head>
+
+
+<title>    Clock II & III   </title>
+
+
+            <link rel="stylesheet" type="text/css" href="clock.css">
+            <style type="text/css">
+                
+#clockdisplay {
+
+    background-color:#000;
+    border:#999 2px inset;
+    padding:6px;
+    color:#0FF;
+    font-family:"Ariel Black", Gadget, sans-serif;
+    font-size:16px;
+    font-weight:bold;
+    letter-spacing:2px;
+    display:inline;
+
+}
+            </style>
+
+
+            <script type = "text/javascript">
+
+                function renderTime() {
+
+            var currentTime() = new Date(); 
+            var diem = "AM"
+            var h = currentTime.getHours();
+            var m = currentTime.getMinutes();
+            var s = currentTime.getSeconds();
+
+
+            if (h ==0){
+                h = 12
+            }   else if (h>12) {
+                h = h - 12; 
+                diem = "PM";
+
+            }
+
+            if (h<10){
+                h = "0" + h;
+
+            }
+
+            if (m<10){
+                m = "0" + m;
+
+            }
+
+            if (s<10){
+                s = "0" + s;
+
+            }
+
+
+            var myClock = document.getElementById('clockdisplay')
+            myClock.textContent = h + ":" + m + ":" + s + " " + diem; 
+            myClock.innerText = h + ":" + m + ":" + s + " " + diem; 
+            setTimeout('renderTime()',1000);
+            }
+
+
+            renderTime(); 
+            </script>
+
+
+</head>
+
+
+<body>
+
+
+
+<div id = "clockdisplay" class = "clockStyle">      
+22:23PM
+</div>
+<p id="demo"></p>
+
+<form name="Tick">
+<input type="text" size="11" name="Clock">
+</form>
+<script>
+<!--
+/*By George Chiang (JK's JavaScript tutorial)
+http://javascriptkit.com
+Credit must stay intact for use*/
+var Xmas95 = new Date();
+var minutes = Xmas95.getMinutes();
+document.getElementById("demo").innerHTML=minutes;
+
+console.log(minutes); // 15
+function show(){
+
+var Digital=new Date()
+var hours=Digital.getHours()
+var minutes=Digital.getMinutes()
+var seconds=Digital.getSeconds()
+var dn="AM"
+if (hours>12){
+dn="PM"
+hours=hours-12
+}
+if (hours==0)
+hours=12
+if (minutes<=9)
+minutes="0"+minutes
+if (seconds<=9)
+seconds="0"+seconds
+minutes=minutes-minutes
+document.Tick.Clock.value=hours+":"+minutes+":"
++seconds+" "+dn
+setTimeout("show()",1000)
+}
+show()
+//-->
+</script>
+
+<body>
+
+
+
+</html>
+
